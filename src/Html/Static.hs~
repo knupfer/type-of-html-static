@@ -1,0 +1,4 @@
+module Html.Static where
+
+static :: Int
+static = 42
