@@ -35,4 +35,3 @@ test-suite test
   build-depends:      base >= 4.9 && < 5
                     , type-of-html
                     , type-of-html-static
-                    , hspec
