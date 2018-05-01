@@ -9,8 +9,6 @@ module Main where
 import Html
 import Html.Static
 
-import qualified Html.Attribute as A
-
 import Data.Proxy
 
 main :: IO ()
@@ -23,3 +21,17 @@ main = pure ()
       , $(static (div_ "<")) :: Proxy "<div>&lt;</div>"
       )
 
+helloWorld
+  :: ('Title ?> a)
+  => a
+  -> 'Html > (('Head > ('Title > a)) # ('Body > ('P > Proxy "Hello World!")))
+helloWorld x = $(optimize [|
+  html_
+    ( head_
+      ( title_ x
+      )
+    # body_
+      ( p_ "Hello World!"
+      )
+    )
+  |])
