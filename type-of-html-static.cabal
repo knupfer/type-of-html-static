@@ -1,5 +1,5 @@
 name:                 type-of-html-static
-version:              0.1.0.0
+version:              0.1.0.1
 synopsis:             Optimize static parts of type-of-html.
 description:          This library provides the TH-function 'static' to annote which parts of your page are static to dramatically increase performance.
                       It converts and escapes it's argument at compiletime and lifts it to a Proxy Symbol to avoid even appending of Builder.
