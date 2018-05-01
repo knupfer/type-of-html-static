@@ -53,7 +53,7 @@ optimize :: Q Exp -> Q Exp
 optimize = fmap f
 
   where
-    f (AppE (VarE a) b) | nameModule a == Just "Html.Element" = AppE (VarE a) (f b)
+    f (AppE (VarE a) b) | nameModule a == Just "Html.Element" || nameModule a == Just "Html.Attribute" = AppE (VarE a) (f b)
     f (AppE (AppE (VarE a) b) c) | nameModule a == Just "Html.Element" || nameModule a == Just "Html.Type.Internal" && nameBase a == "#" = AppE (AppE (VarE a) (f b)) (f c)
     f (InfixE (Just a) (VarE b) (Just c)) | nameModule b == Just "Html.Type.Internal" && nameBase b == "#"
       = InfixE (Just (f a)) (VarE b) (Just (f c))
