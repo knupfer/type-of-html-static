@@ -14,6 +14,7 @@ copyright:            2018, Florian Knupfer
 category:             Language, Text, Web, HTML
 build-type:           Simple
 extra-source-files:   ChangeLog.md
+                    , Readme.md
 cabal-version:        >=1.10
 source-repository     head
    Type: git
