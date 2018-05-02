@@ -27,7 +27,7 @@ static x = pure (SigE (ConE 'Proxy) (AppT (ConT ''Proxy) (LitT (StrTyLit (render
 -- | Try to optimize a quoted html document at compiletime.
 --
 -- >>> :t \x -> $(optimize [| div_ "a" # x |])
--- \x -> Proxy "<div>a</div>" # x
+-- \x -> 'Div > Proxy "a" # x
 --
 -- This function recurses into an Q Exp and turns every literal
 -- expression which is applied to an element or to an attribute into a
